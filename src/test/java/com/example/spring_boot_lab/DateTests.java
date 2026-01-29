@@ -63,9 +63,10 @@ class DateTests {
 
 	/*
 	 * LocalDateTime 換時區，台北 to UTC
+	 * 原始mock時間 2025-10-31T18:00 -> 2025-10-31T10:00:00
 	 */
 	@Test
-	void testChangeZone() { // 2025-10-31T10:00:00Z
+	void testChangeZone() {
 		ZonedDateTime nowUtc = now.atZone(ZoneId.of("Asia/Taipei")).withZoneSameInstant(ZoneId.of("UTC"));
 		assertEquals("2025-10-31T10:00", nowUtc.toLocalDateTime().toString());
 	}
